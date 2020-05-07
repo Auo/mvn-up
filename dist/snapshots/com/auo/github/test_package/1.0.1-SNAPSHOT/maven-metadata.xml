@@ -1,0 +1,9 @@
+<metadata>
+        <groupId>com.auo.github</groupId>
+        <artifactId>test_package</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+        <versioning>
+            <lastUpdated>20200427111745</lastUpdated>
+        </versioning>
+    </metadata>
+    
