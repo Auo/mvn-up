@@ -4,8 +4,7 @@
   "description": "Upload an artifact to Nexus",
   "main": "index.js",
   "dependencies": {
-    "got": "^11.0.2",
-    "mkdirp": "^1.0.4"
+    "got": "^11.0.2"
   },
   "devDependencies": {
     "mocha": "^7.1.1"

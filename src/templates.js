@@ -2,7 +2,7 @@ const templates = {
     pom: (groupId, artifactId, version, packaging) => {
         return {
             path: `${toPath(groupId)}/${artifactId}/${version}/${artifactId}-${version}.pom`,
-            content: `<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+            content: `<project>
         <modelVersion>4.0.0</modelVersion>
         <groupId>${groupId}</groupId>
         <artifactId>${artifactId}</artifactId>
@@ -30,7 +30,6 @@ const templates = {
             content: `<metadata>
         <groupId>${groupId}</groupId>
         <artifactId>${artifactId}</artifactId>
-        <version>${version}</version>
         <versioning>
             <latest>${version}</latest>
             <versions>

@@ -13,7 +13,7 @@ describe('template generation', () => {
 
         assert.equal(res.path, 'com/something/else/some_artifact/1.0.2/some_artifact-1.0.2.pom');
 
-        const expected = '<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">\n' +
+        const expected = '<project>\n' +
             '        <modelVersion>4.0.0</modelVersion>\n' +
             '        <groupId>com.something.else</groupId>\n' +
             '        <artifactId>some_artifact</artifactId>\n' +
@@ -49,7 +49,6 @@ describe('template generation', () => {
         const expected = '<metadata>\n' +
         '        <groupId>com.something.else</groupId>\n' +
         '        <artifactId>some_artifact</artifactId>\n' +
-        '        <version>1.0.2</version>\n' +
         '        <versioning>\n' +
         '            <latest>1.0.2</latest>\n' +
         '            <versions>\n' +
