@@ -11,7 +11,8 @@
     "nock": "^12.0.3"
   },
   "scripts": {
-    "test": "mocha --watch"
+    "test:watch": "mocha --watch",
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC"
