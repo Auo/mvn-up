@@ -15,6 +15,7 @@
     "test:watch": "mocha --watch",
     "test": "mocha"
   },
+  "bin": "./bin/cli.js",
   "author": "",
   "license": "ISC"
 }
