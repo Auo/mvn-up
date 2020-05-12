@@ -20,7 +20,7 @@ const version = require('../package.json').version;
         .version(version)
         .parse(argv);
 
-    await mavenUpload(
+    mavenUpload(
         program.groupId,
         program.artifactId,
         program.artifactVersion,
@@ -28,6 +28,10 @@ const version = require('../package.json').version;
         //add distribution
         program.file,
         program.baseUrl,
-        { snapshots: program.snapshotPrefix, releases: program.releasesPrefix },
-        { user: program.user, password: program.password });
+        { snapshot: program.snapshotPrefix, release: program.releasesPrefix },
+        { user: program.user, password: program.password })
+        .then(() => console.log('📦  file uploaded to repository'))
+        .catch(err => {
+            console.error('⚠️  failed to upload: ', err);
+        });
 })(process.argv);
