@@ -54,7 +54,6 @@ module.exports = (groupId, artifactId, version, packaging, file, baseUrl, prefix
                         : fs.createReadStream(files[i].location),
                     auth);
             } catch (err) {
-                //console.log('got some error', err);
                 return reject(err);
             }
         }

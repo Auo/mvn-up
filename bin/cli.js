@@ -33,5 +33,6 @@ const version = require('../package.json').version;
         .then(() => console.log('📦  file uploaded to repository'))
         .catch(err => {
             console.error('⚠️  failed to upload: ', err);
+            process.exit(1);
         });
 })(process.argv);
