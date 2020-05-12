@@ -11,7 +11,7 @@ const version = require('../package.json').version;
         .requiredOption('-av, --artifactVersion <version>', 'version of artifact')
         .requiredOption('-pa, --packaging <extension>', 'file extension of artifact')
         .requiredOption('-f, --file <path>', 'artifact to upload')
-        .option('-d, --distribution <distribution>', 'distribution of artifact') //TODO: add support
+        .option('-c, --classifier <classifier>', 'classifier of artifact') //TODO: add support
         .option('-u, --user <user>', 'maven repository user')
         .option('-p, --password <password>', 'password for user')
         .requiredOption('-bu, --baseUrl <url>', 'base url to repository')

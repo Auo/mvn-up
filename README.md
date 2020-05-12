@@ -33,7 +33,7 @@ Options:
   -av, --artifactVersion <version>   version of artifact
   -pa, --packaging <extension>       file extension of artifact
   -f, --file <path>                  artifact to upload
-  -d, --distribution <distribution>  distribution of artifact
+  -c, --classifier <classifier>      classifier of artifact
   -u, --user <user>                  maven repository user
   -p, --password <password>          password for user
   -bu, --baseUrl <url>               base url to repository
