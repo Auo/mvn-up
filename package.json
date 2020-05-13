@@ -1,8 +1,8 @@
 {
-  "name": "nexus",
+  "name": "mvn-up",
   "version": "1.0.0",
-  "description": "Upload an artifact to Nexus",
-  "main": "index.js",
+  "description": "Upload an artifact to a maven repository",
+  "main": "./src/maven-upload.js",
   "dependencies": {
     "commander": "^5.1.0",
     "got": "^11.0.2"
@@ -15,7 +15,13 @@
     "test:watch": "mocha --watch",
     "test": "mocha"
   },
+  "keywords": [
+    "maven",
+    "repository",
+    "artifact",
+    "nexus"
+  ],
   "bin": "./bin/cli.js",
-  "author": "",
-  "license": "ISC"
+  "author": "Andreas Lindgren",
+  "license": "MIT"
 }
