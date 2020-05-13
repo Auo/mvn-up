@@ -9,8 +9,10 @@ describe('upload', () => {
             .put('/maven-snapshots/com/auo/github/artifact.zip')
             .reply(200, 'path matched')
 
-        await upload('http://127.0.0.1','maven-snapshots','com/auo/github/artifact.zip',  Readable.from('a'), { username: 'user', password: 'password'});
+        await upload('http://127.0.0.1/maven-snapshots','com/auo/github/artifact.zip',  Readable.from('a'), { username: 'user', password: 'password'});
 
         assert(scope.isDone(), true);
     });
+
+    afterEach(() => nock.cleanAll());
 });

@@ -25,13 +25,12 @@ const createCheckFiles = async (stream, path, arr) => {
  * @param packaging extension of artifact, e.g. jar, zip
  * @param classifier classifier of artifact, e.g. Distribution
  * @param file path to file to upload
- * @param baseUrl baseUrl of maven-repository, e.g. http://localhost:8081/repository/
- * @param prefixes prefixs for snapshot and release repository, e.g. { release: "maven-releases", snapshot: "maven-snapshots" }
+ * @param url url of maven-repository, e.g. http://localhost:8081/repository/maven-releases or http://localhost:8081/repository/maven-snapshots
  * @param auth authentication for repository, { username: "user", password: "password" }
  * 
  * @returns {Promise}
  */
-module.exports = (groupId, artifactId, version, packaging, classifier, file, baseUrl, prefixes, auth) => {
+module.exports = (groupId, artifactId, version, packaging, classifier, file, url, auth) => {
     return new Promise(async (resolve, reject) => {
         const files = [];
 
@@ -51,10 +50,7 @@ module.exports = (groupId, artifactId, version, packaging, classifier, file, bas
         files.push(artifactMeta);
         await createCheckFiles(Readable.from(artifactMeta.content), artifactMeta.path, files);
 
-        let prefix = prefixes.release;
-
         if (isSnapshot(version)) {
-            prefix = prefixes.snapshot;
             const snapshotMeta = templates.snapshotMetadata(groupId, artifactId, version, now);
             files.push(snapshotMeta);
             await createCheckFiles(Readable.from(snapshotMeta.content), snapshotMeta.path, files);
@@ -62,8 +58,7 @@ module.exports = (groupId, artifactId, version, packaging, classifier, file, bas
 
         for (let i = 0; i < files.length; i++) {
             try {
-                await upload(baseUrl,
-                    prefix,
+                await upload(url,
                     files[i].path,
                     files[i].content != null
                         ? Readable.from(files[i].content)

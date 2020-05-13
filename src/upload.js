@@ -3,18 +3,16 @@ const got = require('got');
 /**
  * Upload a stream to the specified repository
  * 
- * @param baseUrl baseUrl of repository
- * @param versionPrefix prefix for snapshot vs releases. Should default
- * to /snapshots and /releases
+ * @param url url of maven-repository
  * @param path path to file e.g. com/something/else/maven-metadata.xml
- * @param stream stream of to upload
+ * @param stream stream to upload
  * @param auth { username: username, password: password }
  */
-module.exports = async (baseUrl, versionPrefix, path, stream, auth) => {
-    const url = `${baseUrl}/${versionPrefix}/${path}`;
+module.exports = async (url, path, stream, auth) => {
+    const fullUrl = `${url}/${path}`;
     try {
-        await got.put(url, { username: auth.username, password: auth.password, body: stream });
+        await got.put(fullUrl, { username: auth.username, password: auth.password, body: stream });
     } catch (error) {
-        throw { code: error.response.statusCode, message: error.response.statusMessage, url };
+        throw { code: error.response.statusCode, message: error.response.statusMessage, url: fullUrl };
     }
 };

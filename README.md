@@ -14,8 +14,7 @@ mavenUpload('com.some.group', // groupId
     'zip', // packaging
     'Distribution', // classifier
     '/path/to/file.zip', // artifact
-    'http://localhost:8081/nexus/', // base url to repo
-    { snapshot: 'maven-snapshots', release: 'maven-releases' }, // repository 
+    'http://localhost:8081/repository/maven-snapshots', // base url to repo
     { username: 'user', password: 'password' } // authentication
     ).then(() => console.log('📦 upload done'))
     .catch(err => console.error('❌upload failed', err));
@@ -28,15 +27,13 @@ Usage: cli [options]
 Options:
   -g, --groupId <id>                 group id of artifact
   -a, --artifactId <id>              artifact id
-  -av, --artifactVersion <version>   version of artifact
-  -pa, --packaging <extension>       file extension of artifact
+  -v, --artifactVersion <version>   version of artifact
+  -P, --packaging <extension>       file extension of artifact
   -f, --file <path>                  artifact to upload
   -c, --classifier <classifier>      classifier of artifact
   -u, --user <user>                  maven repository user
   -p, --password <password>          password for user
-  -bu, --baseUrl <url>               base url to repository
-  -sp, --snapshotPrefix <prefix>     prefix for snapshots (default: "maven-snapshots")
-  -rp, --releasePrefix <prefix>      prefix for releases (default: "maven-releases")
+  -U, --url <url>                    base url to repository
   -V, --version                      output the version number
   -h, --help                         display help for command
 ```
