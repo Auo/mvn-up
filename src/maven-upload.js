@@ -15,11 +15,11 @@ const createCheckFiles = async (stream, path, arr) => {
 // 1. Generate md5 and sha for file
 // 2. Generate memory files and md5 sha for them
 // 3. upload
-module.exports = (groupId, artifactId, version, packaging, file, baseUrl, prefixes, auth) => {
+module.exports = (groupId, artifactId, version, packaging, classifier, file, baseUrl, prefixes, auth) => {
     return new Promise(async (resolve, reject) => {
         const files = [];
 
-        const artifactPath = `${toPath(groupId)}/${artifactId}/${version}/${artifactId}-${version}.${packaging}`;
+        const artifactPath = `${toPath(groupId)}/${artifactId}/${version}/${artifactId}-${version}${!!classifier ? '-' + classifier : ''}.${packaging}`;
         await createCheckFiles(fs.createReadStream(file), artifactPath, files);
 
         files.push({ path: artifactPath, content: null, location: file });
