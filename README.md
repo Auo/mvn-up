@@ -3,28 +3,26 @@
 
 Simple library to upload artifacts to a maven repository, when `mvn` is not available.
 
-## Which options should be possible?
-```json
-{
-    "groupId": "nexus-deployer",
-    "artifactId": "nexus-deployer",
-    "version": "1.0",
-    "packaging": "zip",
-    "classifier": "Distribution",
-    "auth": {
-      "username": "admin",
-      "password": "admin123"
-    },
-    "prefix": {
-      "snapshot": "maven-snapshot",
-      "release": "maven-release"
-    },
-    "baseUrl": "http://localhost:8081/nexus/",
-    "artifact": "build/nexus-deployer.zip"
-}
+## Usage
+
+```js
+const mavenUpload = require('');
+
+mavenUpload('com.some.group', // groupId
+    'some_artifact_id', // artifactId
+    '1.0.2-SNAPSHOT', // version
+    'zip', // packaging
+    'Distribution', // classifier
+    '/path/to/file.zip', // artifact
+    'http://localhost:8081/nexus/', // base url to repo
+    { snapshot: 'maven-snapshots', release: 'maven-releases' }, // repository 
+    { username: 'user', password: 'password' } // authentication
+    ).then(() => console.log('📦 upload done'))
+    .catch(err => console.error('❌upload failed', err));
 ```
 
-```
+
+```bash
 Usage: cli [options]
 
 Options:
