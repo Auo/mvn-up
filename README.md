@@ -6,7 +6,7 @@ Simple library to upload artifacts to a maven repository, when `mvn` is not avai
 ## Usage
 
 ```js
-const mavenUpload = require('');
+const mavenUpload = require('mvn-up');
 
 mavenUpload('com.some.group', // groupId
     'some_artifact_id', // artifactId
