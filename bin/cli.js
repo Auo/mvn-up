@@ -28,7 +28,7 @@ mavenUpload(
     program.file,
     program.baseUrl,
     { snapshot: program.snapshotPrefix, release: program.releasesPrefix },
-    { user: program.user, password: program.password })
+    { username: program.user, password: program.password })
     .then(() => console.log('📦  file uploaded to repository'))
     .catch(err => {
         console.error('⚠️  failed to upload: ', err);

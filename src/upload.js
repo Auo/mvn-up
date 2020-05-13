@@ -13,7 +13,7 @@ const got = require('got');
 module.exports = async (baseUrl, versionPrefix, path, stream, auth) => {
     const url = `${baseUrl}/${versionPrefix}/${path}`;
     try {
-        await got.put(url, { username: auth.user, password: auth.password, body: stream });
+        await got.put(url, { username: auth.username, password: auth.password, body: stream });
     } catch (error) {
         throw { code: error.response.statusCode, message: error.response.statusMessage, url };
     }

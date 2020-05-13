@@ -12,9 +12,25 @@ const createCheckFiles = async (stream, path, arr) => {
     arr.push({ path: path + `.sha1`, content: validation.sha1 });
 };
 
-// 1. Generate md5 and sha for file
-// 2. Generate memory files and md5 sha for them
-// 3. upload
+/**
+ * Upload a file to a maven repository, will also generate supporting files, such as pom.
+ * 
+ * 1. Generate md5 and sha for file
+ * 2. Generate memory files and md5 sha for them
+ * 3. upload
+ * 
+ * @param groupId id of group, e.g. com/auo/github
+ * @param artifactId id of artifact, e.g. some_artifact
+ * @param version version. e.g. 1.0.2 or 1.0.3-SNAPSHOT
+ * @param packaging extension of artifact, e.g. jar, zip
+ * @param classifier classifier of artifact, e.g. Distribution
+ * @param file path to file to upload
+ * @param baseUrl baseUrl of maven-repository, e.g. http://localhost:8081/repository/
+ * @param prefixes prefixs for snapshot and release repository, e.g. { release: "maven-releases", snapshot: "maven-snapshots" }
+ * @param auth authentication for repository, { username: "user", password: "password" }
+ * 
+ * @returns {Promise}
+ */
 module.exports = (groupId, artifactId, version, packaging, classifier, file, baseUrl, prefixes, auth) => {
     return new Promise(async (resolve, reject) => {
         const files = [];
