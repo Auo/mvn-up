@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "Upload an artifact to a maven repository",
   "main": "./src/maven-upload.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Auo/mvn-up.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Auo/mvn-up/issues"
+  },
   "dependencies": {
     "commander": "^5.1.0",
     "got": "^11.0.2"
