@@ -1,4 +1,4 @@
-# maven-upload
+# mvn-up
 ![run-tests](https://github.com/Auo/maven-upload/workflows/run-tests/badge.svg?branch=master)
 
 Simple library to upload artifacts to a maven repository, when `mvn` is not available. Inspired by [nexus-deployer](https://github.com/cthorne66/nexus-deployer).
