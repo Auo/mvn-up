@@ -1,9 +1,9 @@
 # maven-upload
 ![run-tests](https://github.com/Auo/maven-upload/workflows/run-tests/badge.svg?branch=master)
 
-Simple library to upload artifacts to a maven repository, when `mvn` is not available.
+Simple library to upload artifacts to a maven repository, when `mvn` is not available. Inspired by [nexus-deployer](https://github.com/cthorne66/nexus-deployer).
 
-## Usage
+## Package
 
 ```js
 const mavenUpload = require('mvn-up');
@@ -20,6 +20,14 @@ mavenUpload('com.some.group', // groupId
     .catch(err => console.error('❌upload failed', err));
 ```
 
+## CLI
+
+### Run with npx
+```bash
+npx mvn-up -g com.some.group -a test_package -v 1.0.3-SNAPSHOT -P zip -f ./test/test.zip -u username -p password -U http://localhost:8081/repository/maven-snapshots
+```
+
+### Options
 
 ```bash
 Usage: cli [options]
