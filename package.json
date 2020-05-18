@@ -1,6 +1,6 @@
 {
   "name": "mvn-up",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Upload an artifact to a maven repository",
   "main": "./src/maven-upload.js",
   "repository": {
