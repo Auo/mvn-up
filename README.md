@@ -1,13 +1,12 @@
 # mvn-up
-![run-tests](https://github.com/Auo/maven-upload/workflows/run-tests/badge.svg?branch=master) [![](https://img.shields.io/npm/v/mvn-up?logo=npm)](https://www.npmjs.com/package/mvn-up)
+![run-tests](https://github.com/Auo/maven-upload/workflows/run-tests/badge.svg?branch=master) 
+[![](https://img.shields.io/npm/v/mvn-up?logo=npm)](https://www.npmjs.com/package/mvn-up)
 
 Upload artifacts to a maven repository, when it's not a maven-project. Inspired by [nexus-deployer](https://github.com/cthorne66/nexus-deployer).
 
-## Install
+## Dependency
 
-`npm instal --save-dev mvn-up`
-
-## Package
+`npm install --save-dev mvn-up`
 
 ```js
 const mvnUp = require('mvn-up');
