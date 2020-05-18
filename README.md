@@ -1,14 +1,18 @@
 # mvn-up
 ![run-tests](https://github.com/Auo/maven-upload/workflows/run-tests/badge.svg?branch=master) [![](https://img.shields.io/npm/v/mvn-up?logo=npm)](https://www.npmjs.com/package/mvn-up)
 
-Simple library to upload artifacts to a maven repository, when `mvn` is not available. Inspired by [nexus-deployer](https://github.com/cthorne66/nexus-deployer).
+Upload artifacts to a maven repository, when it's not a maven-project. Inspired by [nexus-deployer](https://github.com/cthorne66/nexus-deployer).
+
+## Install
+
+`npm instal --save-dev mvn-up`
 
 ## Package
 
 ```js
-const mavenUpload = require('mvn-up');
+const mvnUp = require('mvn-up');
 
-mavenUpload('com.some.group', // groupId
+mvnUp('com.some.group', // groupId
     'some_artifact_id', // artifactId
     '1.0.2-SNAPSHOT', // version
     'zip', // packaging
