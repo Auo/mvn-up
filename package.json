@@ -15,8 +15,8 @@
     "got": "^11.0.2"
   },
   "devDependencies": {
-    "mocha": "^7.1.1",
-    "nock": "^12.0.3"
+    "mocha": "^8.4.0",
+    "nock": "^13.0.11"
   },
   "scripts": {
     "test:watch": "mocha --watch",
