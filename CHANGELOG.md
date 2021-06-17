@@ -12,3 +12,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed invalid md5 and sha1 file hashes
+
+## [1.1.2] - 2021-04-01
+
+### Changed
+
+- Updated dependencies
+
+## [1.1.1] - 2020-05-18
+
+### Changed
+
+- Improved documentation
+
+## [1.1.0] - 2020-04-14
