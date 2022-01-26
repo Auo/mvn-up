@@ -17,17 +17,19 @@ program
     .version(version)
     .parse(process.argv);
 
+const options = program.opts();
+
 mavenUpload(
-    program.groupId,
-    program.artifactId,
-    program.artifactVersion,
-    program.packaging,
-    program.classifier,
-    program.file,
-    program.url,
+    options.groupId,
+    options.artifactId,
+    options.artifactVersion,
+    options.packaging,
+    options.classifier,
+    options.file,
+    options.url,
     { 
-        username: program.user,
-        password: program.password
+        username: options.user,
+        password: options.password
     }).then(() => console.log('📦  file uploaded to repository'))
     .catch(err => {
         console.error('⚠️  failed to upload: ', err);
