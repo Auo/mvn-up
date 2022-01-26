@@ -11,12 +11,12 @@
     "url": "https://github.com/Auo/mvn-up/issues"
   },
   "dependencies": {
-    "commander": "^5.1.0",
-    "got": "^11.8.2"
+    "commander": "^8.3.0",
+    "got": "^11.8.3"
   },
   "devDependencies": {
-    "mocha": "^9.0.0",
-    "nock": "^13.1.0"
+    "mocha": "^9.2.0",
+    "nock": "^13.2.2"
   },
   "scripts": {
     "test:watch": "mocha --watch",
