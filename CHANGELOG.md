@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.6] - 2022-01-26
+
+### Fixed
+
+- Fixed invalid upload order for artifact and hashes
+
 ## [1.1.5] - 2022-01-26
 
 ### Changed
