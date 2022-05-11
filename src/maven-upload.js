@@ -33,11 +33,9 @@ const createCheckFiles = async (stream, path, arr) => {
 module.exports = (groupId, artifactId, version, packaging, classifier, file, url, auth) => {
     return new Promise(async (resolve, reject) => {
         const files = [];
-
         const artifactPath = `${toPath(groupId)}/${artifactId}/${version}/${artifactId}-${version}${!!classifier ? '-' + classifier : ''}.${packaging}`;
-        await createCheckFiles(fs.createReadStream(file), artifactPath, files);
-
         files.push({ path: artifactPath, content: null, location: file });
+        await createCheckFiles(fs.createReadStream(file), artifactPath, files);
 
         const now = timestamp(new Date());
 
